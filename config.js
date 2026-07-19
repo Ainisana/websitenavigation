@@ -2,12 +2,12 @@
 // 修改这个文件就可以更新网站上的所有链接
 
 const linksConfig = {
-    "全屏钱包": {
-        icon: "💰",
+    "网址导航": {
+
         links: [
             { 
-                title: "OKX钱包", 
-                url: "chrome-extension://mcohilncbfahbmgdjkbpemcciiolgcge/home.html", 
+                title: "秀米", 
+                url: "https://xiumi.us/", 
                 icon: "🔶",
                 description: "OKX官方浏览器钱包"
             },
