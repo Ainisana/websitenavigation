@@ -3,58 +3,15 @@
 
 const linksConfig = {
     "网址导航": {
-
         links: [
             { 
                 title: "秀米", 
                 url: "https://xiumi.us/", 
-                icon: "🔶",
-                description: "OKX官方浏览器钱包"
             },
             { 
-                title: "MetaMask钱包", 
-                url: "chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/home.html", 
-                icon: "🦊",
-                description: "以太坊主流钱包"
-            },
-            { 
-                title: "Phantom钱包", 
-                url: "chrome-extension://bfnaelmomeimhlpmgjnjophhpkkoljpa/popup.html", 
-                icon: "👻",
-                description: "Solana生态钱包"
-            }
-        ]
-    },
-    "钱包相关": {
-        icon: "🌐",
-        links: [
-            { title: "CT", url: "https://ct.app/", icon: "🏠" },
-            { title: "提币", url: "https://cex.chaineye.tools/", icon: "🏠" }
-        ]
-    },
-    "Chrome设置": {
-        icon: "⚙️",
-        links: [
-            { title: "扩展管理", url: "chrome://extensions/", icon: "🧩" },
-            { title: "历史记录", url: "chrome://history/", icon: "📚" },
-            { title: "书签管理", url: "chrome://bookmarks/", icon: "🔖" },
-            { title: "清除缓存", url: "chrome://settings/privacy", icon: "🧹" },
-            { title: "设置语言", url: "chrome://settings/languages", icon: "🌐" },
-            { title: "网页缩放", url: "chrome://settings/appearance", icon: "🔍" },
-            { title: "APP管理", url: "chrome://apps/", icon: "📱" },
-            { title: "密码管理", url: "chrome://password-manager/passwords", icon: "🔑" }
-        ]
-    },
-    "推特快捷链接": {
-        icon: "🐦",
-        links: [
-            { title: "修改密码", url: "https://x.com/settings/password", icon: "🔑" },
-            { title: "语言设置", url: "https://x.com/settings/language", icon: "🌐" },
-            { title: "资料设置", url: "https://x.com/settings/profile", icon: "📚" },
-            { title: "修改邮箱", url: "https://x.com/settings/email", icon: "📧" },
-            { title: "2FA", url: "https://x.com/settings/account/login_verification", icon: "🔒" }
-        ]
-    },
+                title: "pexels", 
+                url: "https://www.pexels.com/", 
+             
     "Discord": {
         icon: "🌐",
         links: [
