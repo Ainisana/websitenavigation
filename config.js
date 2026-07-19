@@ -1,11 +1,15 @@
+// 在现有分类里添加新网站，例如在 "常用工具" 分类下：
+"常用工具": {
+    links: [
+        { title: "GitHub", url: "https://github.com" },
+        { title: "Google", url: "https://www.google.com" },
+        { title: "Chatgpt", url: "https://chatgpt.com/" }
+    ]
+},
+// 
+"图文资源": {
 
-const links = [
-    {
-        "分类名": "工作常用",
-        "网站列表": [
-            { "图文": "秀米", "url": "https://xiumi.us/" },
-            { "图片": "pexels", "url": "https://www.pexels.com/" }
-        ]
-    }
-    // ... 更多分类
-];
+    links: [
+        { title: "Pexels", url: "https://www.pexels.com/" }
+    ]
+}
