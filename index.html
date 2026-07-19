@@ -1,1 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的导航页</title>
+    <style>
+        /* 全局重置与字体 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f0f2f5;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* 网格容器：两行，每行四个 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+        /* 每个卡片（方形框） */
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 20px 15px;
+            aspect-ratio: 1 / 1; /* 保持正方形 */
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        /* 卡片标题（分类名） */
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            text-align: center;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e8ecf1;
+            margin-bottom: 12px;
+        }
+        /* 链接列表 */
+        .card ul {
+            list-style: none;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .card ul li {
+            margin: 4px 0;
+        }
+        .card ul li a {
+            display: block;
+            color: #2d3748;
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: background 0.15s;
+            word-break: break-all;
+        }
+        .card ul li a:hover {
+            background: #edf2f7;
+            color: #1a202c;
+        }
+        /* 移动端适配：平板及小屏幕 */
+        @media (max-width: 992px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+        }
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .card {
+                padding: 12px 10px;
+            }
+            .card-title {
+                font-size: 1rem;
+                padding-bottom: 8px;
+            }
+            .card ul li a {
+                font-size: 0.85rem;
+                padding: 4px 6px;
+            }
+        }
+        @media (max-width: 400px) {
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <!-- ===== 卡片 1 ===== -->
+        <div class="card">
+            <div class="card-title">📁 工作常用</div>
+            <ul>
+                <li><a href="https://mail.example.com" target="_blank">公司邮箱</a></li>
+                <li><a href="https://docs.example.com" target="_blank">在线文档</a></li>
+                <li><a href="https://task.example.com" target="_blank">任务管理</a></li>
+                <li><a href="https://calendar.example.com" target="_blank">日程安排</a></li>
+                <li><a href="https://drive.example.com" target="_blank">云盘</a></li>
+            </ul>
+        </div>
 
+        <!-- ===== 卡片 2 ===== -->
+        <div class="card">
+            <div class="card-title">🛠️ 开发工具</div>
+            <ul>
+                <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                <li><a href="https://stackoverflow.com" target="_blank">Stack Overflow</a></li>
+                <li><a href="https://code.visualstudio.com" target="_blank">VS Code</a></li>
+                <li><a href="https://www.npmjs.com" target="_blank">npm</a></li>
+                <li><a href="https://www.docker.com" target="_blank">Docker</a></li>
+            </ul>
+        </div>
+
+        <!-- ===== 卡片 3 ===== -->
+        <div class="card">
+            <div class="card-title">🧠 AI 助手</div>
+            <ul>
+                <li><a href="https://chat.openai.com" target="_blank">ChatGPT</a></li>
+                <li><a href="https://claude.ai" target="_blank">Claude</a></li>
+                <li><a href="https://www.deepseek.com" target="_blank">DeepSeek</a></li>
+                <li><a href="https://gemini.google.com" target="_blank">Gemini</a></li>
+                <li><a href="https://www.perplexity.ai" target="_blank">Perplexity</a></li>
+            </ul>
+        </div>
+
+        <!-- ===== 卡片 4 ===== -->
+        <div class="card">
+            <div class="card-title">📚 学习资源</div>
+            <ul>
+                <li><a href="https://www.bilibili.com" target="_blank">哔哩哔哩</a></li>
+                <li><a href="https://www.coursera.org" target="_blank">Coursera</a></li>
+                <li><a href="https://developer.mozilla.org" target="_blank">MDN 文档</a></li>
+                <li><a href="https://www.w3schools.com" target="_blank">W3Schools</a></li>
+                <li><a href="https://leetcode.cn" target="_blank">力扣</a></li>
+            </ul>
+        </div>
+
+        <!-- ===== 卡片 5 ===== -->
+        <div class="card">
+            <div class="card-title">🎨 设计素材</div>
+            <ul>
+                <li><a href="https://www.pexels.com" target="_blank">Pexels</a></li>
+                <li><a href="https://unsplash.com" target="_blank">Unsplash</a></li>
+                <li><a href="https://www.iconfont.cn" target="_blank">iconfont</a></li>
+                <li><a href="https://www.figma.com" target="_blank">Figma</a></li>
+                <li><a href="https://www.canva.com" target="_blank">Canva</a></li>
+            </ul>
+        </div>
+
+        <!-- ===== 卡片 6 ===== -->
+        <div class="card">
+            <div class="card-title">📰 资讯阅读</div>
+            <ul>
+                <li><a href="https://news.ycombinator.com" target="_blank">Hacker News</a></li>
+                <li><a href="https://www.zhihu.com" target="_blank">知乎</a></li>
+                <li><a href="https://sspai.com" target="_blank">少数派</a></li>
+                <li><a href="https://www.36kr.com" target="_blank">36氪</a></li>
+                <li><a href="https://www.theverge.com" target="_blank">The Verge</a></li>
+            </ul>
+        </div>
+
+        <!-- ===== 卡片 7 ===== -->
+        <div class="card">
+            <div class="card-title">🌐 社交网络</div>
+            <ul>
+                <li><a href="https://twitter.com" target="_blank">Twitter / X</a></li>
+                <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
+                <li><a href="https://www.reddit.com" target="_blank">Reddit</a></li>
+                <li><a href="https://t.me" target="_blank">Telegram</a></li>
+                <li><a href="https://discord.com" target="_blank">Discord</a></li>
+            </ul>
+        </div>
+
+        <!-- ===== 卡片 8 ===== -->
+        <div class="card">
+            <div class="card-title">⚙️ 实用工具</div>
+            <ul>
+                <li><a href="https://www.google.com" target="_blank">Google</a></li>
+                <li><a href="https://translate.google.com" target="_blank">Google 翻译</a></li>
+                <li><a href="https://www.deepl.com" target="_blank">DeepL 翻译</a></li>
+                <li><a href="https://www.timeanddate.com" target="_blank">世界时钟</a></li>
+                <li><a href="https://www.calculator.net" target="_blank">计算器</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
