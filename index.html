@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的导航页</title>
     <style>
-        /* 全局重置 */
         * {
             margin: 0;
             padding: 0;
@@ -13,7 +12,7 @@
         }
 
         body {
-            background: #f0f2f5;
+            background: #f7f9fc;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             padding: 24px;
             min-height: 100vh;
@@ -22,7 +21,6 @@
             align-items: center;
         }
 
-        /* 网格容器：两行四列 */
         .grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -31,18 +29,15 @@
             width: 100%;
         }
 
-        /* 卡片 - 方形，带设计感 */
         .card {
-            background: #ffffff;
             border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.03);
             padding: 20px 16px 16px;
             aspect-ratio: 1 / 1;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.03);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
         .card:hover {
@@ -50,29 +45,25 @@
             box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
         }
 
-        /* 卡片标题 */
         .card-title {
             font-size: 1.1rem;
             font-weight: 600;
-            color: #1e293b;
             text-align: center;
             padding-bottom: 12px;
             margin-bottom: 12px;
-            border-bottom: 2px solid #eef2f6;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.06);
             letter-spacing: 0.3px;
             flex-shrink: 0;
         }
 
-        /* 卡片内容区域：左右两栏 + 竖线 */
         .card-body {
             flex: 1;
             display: flex;
             align-items: stretch;
             position: relative;
-            min-height: 0; /* 防止flex溢出 */
+            min-height: 0;
         }
 
-        /* 左栏和右栏 */
         .col {
             flex: 1;
             display: flex;
@@ -89,14 +80,13 @@
             padding-left: 8px;
         }
 
-        /* 每个链接项 */
         .link-item {
             margin: 3px 0;
         }
 
         .link-item a {
             display: block;
-            color: #334155;
+            color: #2d3748;
             text-decoration: none;
             font-size: 0.9rem;
             padding: 6px 8px;
@@ -108,100 +98,91 @@
         }
 
         .link-item a:hover {
-            background: #f1f5f9;
-            color: #0f172a;
+            background: rgba(255, 255, 255, 0.7);
+            color: #1a202c;
         }
 
-        /* 灰色竖线 - 不连接上下边缘 */
         .divider-line {
             width: 1.5px;
-            background: #dce1e8;
+            background: rgba(0, 0, 0, 0.10);
             flex-shrink: 0;
-            margin: 12px 0;  /* 上下留白，不连接边缘 */
+            margin: 12px 0;
             border-radius: 2px;
-            opacity: 0.7;
         }
 
-        /* 响应式：平板 */
+        /* 配色 */
+        .card-1 { background: #e6f2ff; }
+        .card-1 .card-title { color: #1a4b8c; }
+
+        .card-2 { background: #e6f7e6; }
+        .card-2 .card-title { color: #1e6b3b; }
+
+        .card-3 { background: #f0e6ff; }
+        .card-3 .card-title { color: #5a3d8a; }
+
+        .card-4 { background: #ffe6f0; }
+        .card-4 .card-title { color: #8f3b5e; }
+
+        .card-5 { background: #fff0e0; }
+        .card-5 .card-title { color: #8f5a2a; }
+
+        .card-6 { background: #e0f7fa; }
+        .card-6 .card-title { color: #1f6b7a; }
+
+        .card-7 { background: #fffde0; }
+        .card-7 .card-title { color: #7a6b1a; }
+
+        .card-8 { background: #e8ecf1; }
+        .card-8 .card-title { color: #3a4a5e; }
+
         @media (max-width: 1024px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
+            .grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
         }
 
-        /* 响应式：手机 */
         @media (max-width: 640px) {
-            body {
-                padding: 16px;
-            }
-            .grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 14px;
-            }
-            .card {
-                padding: 14px 12px 12px;
-                border-radius: 16px;
-            }
-            .card-title {
-                font-size: 0.95rem;
-                padding-bottom: 8px;
-                margin-bottom: 8px;
-            }
-            .link-item a {
-                font-size: 0.75rem;
-                padding: 4px 6px;
-                border-radius: 6px;
-            }
-            .divider-line {
-                margin: 8px 0;
-            }
-            .col-left {
-                padding-right: 4px;
-            }
-            .col-right {
-                padding-left: 4px;
-            }
+            body { padding: 16px; }
+            .grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+            .card { padding: 14px 12px 12px; border-radius: 16px; }
+            .card-title { font-size: 0.95rem; padding-bottom: 8px; margin-bottom: 8px; }
+            .link-item a { font-size: 0.75rem; padding: 4px 6px; border-radius: 6px; }
+            .divider-line { margin: 8px 0; }
+            .col-left { padding-right: 4px; }
+            .col-right { padding-left: 4px; }
         }
 
         @media (max-width: 420px) {
-            .grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-            .card {
-                aspect-ratio: auto; /* 手机端取消强制方形，让高度自适应 */
-                min-height: 220px;
-            }
+            .grid { grid-template-columns: 1fr; gap: 16px; }
+            .card { aspect-ratio: auto; min-height: 200px; }
         }
     </style>
 </head>
 <body>
     <div class="grid">
         <!-- ===== 卡片 1：工作常用 ===== -->
-        <div class="card">
+        <div class="card card-1">
             <div class="card-title">📁 工作常用</div>
             <div class="card-body">
                 <div class="col col-left">
-                    <div class="link-item"><a href="#" target="_blank">公司邮箱</a></div>
-                    <div class="link-item"><a href="#" target="_blank">在线文档</a></div>
-                    <div class="link-item"><a href="#" target="_blank">任务管理</a></div>
-                    <div class="link-item"><a href="#" target="_blank">日程安排</a></div>
-                    <div class="link-item"><a href="#" target="_blank">云盘</a></div>
+                    <div class="link-item"><a href="https://mail.google.com" target="_blank">Gmail</a></div>
+                    <div class="link-item"><a href="https://docs.google.com" target="_blank">Google Docs</a></div>
+                    <div class="link-item"><a href="https://trello.com" target="_blank">Trello</a></div>
+                    <div class="link-item"><a href="https://calendar.google.com" target="_blank">Google Calendar</a></div>
+                    <div class="link-item"><a href="https://drive.google.com" target="_blank">Google Drive</a></div>
                 </div>
                 <div class="divider-line"></div>
                 <div class="col col-right">
-                    <div class="link-item"><a href="#" target="_blank">企业微信</a></div>
-                    <div class="link-item"><a href="#" target="_blank">钉钉</a></div>
-                    <div class="link-item"><a href="#" target="_blank">飞书</a></div>
-                    <div class="link-item"><a href="#" target="_blank">VPN</a></div>
-                    <div class="link-item"><a href="#" target="_blank">内网门户</a></div>
+                    <!-- 右侧占位，保持对称 -->
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
                 </div>
             </div>
         </div>
 
         <!-- ===== 卡片 2：开发工具 ===== -->
-        <div class="card">
+        <div class="card card-2">
             <div class="card-title">🛠️ 开发工具</div>
             <div class="card-body">
                 <div class="col col-left">
@@ -213,61 +194,61 @@
                 </div>
                 <div class="divider-line"></div>
                 <div class="col col-right">
-                    <div class="link-item"><a href="https://git-scm.com" target="_blank">Git</a></div>
-                    <div class="link-item"><a href="https://www.postman.com" target="_blank">Postman</a></div>
-                    <div class="link-item"><a href="https://www.jetbrains.com" target="_blank">JetBrains</a></div>
-                    <div class="link-item"><a href="https://www.sublimetext.com" target="_blank">Sublime</a></div>
-                    <div class="link-item"><a href="https://www.nginx.com" target="_blank">Nginx</a></div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
                 </div>
             </div>
         </div>
 
         <!-- ===== 卡片 3：AI 助手 ===== -->
-        <div class="card">
+        <div class="card card-3">
             <div class="card-title">🧠 AI 助手</div>
             <div class="card-body">
                 <div class="col col-left">
                     <div class="link-item"><a href="https://chat.openai.com" target="_blank">ChatGPT</a></div>
                     <div class="link-item"><a href="https://claude.ai" target="_blank">Claude</a></div>
-                    <div class="link-item"><a href="https://www.deepseek.com" target="_blank">DeepSeek</a></div>
-                    <div class="link-item"><a href="https://gemini.google.com" target="_blank">Gemini</a></div>
-                    <div class="link-item"><a href="https://www.perplexity.ai" target="_blank">Perplexity</a></div>
+                    <div class="link-item"><a href="https://www.jetbrains.com" target="_blank">JetBrains</a></div>
+                    <div class="link-item"><a href="https://www.sublimetext.com" target="_blank">Sublime</a></div>
+                    <div class="link-item"><a href="https://nginx.org" target="_blank">Nginx</a></div>
                 </div>
                 <div class="divider-line"></div>
                 <div class="col col-right">
-                    <div class="link-item"><a href="https://www.anthropic.com" target="_blank">Anthropic</a></div>
-                    <div class="link-item"><a href="https://www.mistral.ai" target="_blank">Mistral</a></div>
-                    <div class="link-item"><a href="https://cohere.com" target="_blank">Cohere</a></div>
-                    <div class="link-item"><a href="https://huggingface.co" target="_blank">Hugging Face</a></div>
-                    <div class="link-item"><a href="https://openai.com" target="_blank">OpenAI</a></div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
                 </div>
             </div>
         </div>
 
         <!-- ===== 卡片 4：学习资源 ===== -->
-        <div class="card">
+        <div class="card card-4">
             <div class="card-title">📚 学习资源</div>
             <div class="card-body">
                 <div class="col col-left">
                     <div class="link-item"><a href="https://www.bilibili.com" target="_blank">哔哩哔哩</a></div>
+                    <div class="link-item"><a href="https://www.udemy.com" target="_blank">Udemy</a></div>
                     <div class="link-item"><a href="https://www.coursera.org" target="_blank">Coursera</a></div>
+                    <div class="link-item"><a href="https://www.edx.org" target="_blank">edX</a></div>
                     <div class="link-item"><a href="https://developer.mozilla.org" target="_blank">MDN 文档</a></div>
-                    <div class="link-item"><a href="https://www.w3schools.com" target="_blank">W3Schools</a></div>
-                    <div class="link-item"><a href="https://leetcode.cn" target="_blank">力扣</a></div>
                 </div>
                 <div class="divider-line"></div>
                 <div class="col col-right">
-                    <div class="link-item"><a href="https://www.udemy.com" target="_blank">Udemy</a></div>
-                    <div class="link-item"><a href="https://www.edx.org" target="_blank">edX</a></div>
-                    <div class="link-item"><a href="https://www.khanacademy.org" target="_blank">Khan Academy</a></div>
+                    <div class="link-item"><a href="https://www.w3schools.com" target="_blank">W3Schools</a></div>
+                    <div class="link-item"><a href="https://leetcode.cn" target="_blank">力扣</a></div>
                     <div class="link-item"><a href="https://www.codecademy.com" target="_blank">Codecademy</a></div>
                     <div class="link-item"><a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a></div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
                 </div>
             </div>
         </div>
 
         <!-- ===== 卡片 5：设计素材 ===== -->
-        <div class="card">
+        <div class="card card-5">
             <div class="card-title">🎨 设计素材</div>
             <div class="card-body">
                 <div class="col col-left">
@@ -279,18 +260,40 @@
                 </div>
                 <div class="divider-line"></div>
                 <div class="col col-right">
-                    <div class="link-item"><a href="https://www.adobe.com" target="_blank">Adobe</a></div>
-                    <div class="link-item"><a href="https://www.sketch.com" target="_blank">Sketch</a></div>
-                    <div class="link-item"><a href="https://www.invisionapp.com" target="_blank">InVision</a></div>
-                    <div class="link-item"><a href="https://www.dribbble.com" target="_blank">Dribbble</a></div>
-                    <div class="link-item"><a href="https://www.behance.net" target="_blank">Behance</a></div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
                 </div>
             </div>
         </div>
 
         <!-- ===== 卡片 6：资讯阅读 ===== -->
-        <div class="card">
+        <div class="card card-6">
             <div class="card-title">📰 资讯阅读</div>
+            <div class="card-body">
+                <div class="col col-left">
+                    <div class="link-item"><a href="https://www.adobe.com" target="_blank">Adobe</a></div>
+                    <div class="link-item"><a href="https://www.sketch.com" target="_blank">Sketch</a></div>
+                    <div class="link-item"><a href="https://www.invisionapp.com" target="_blank">InVision</a></div>
+                    <div class="link-item"><a href="https://dribbble.com" target="_blank">Dribbble</a></div>
+                    <div class="link-item"><a href="https://behance.net" target="_blank">Behance</a></div>
+                </div>
+                <div class="divider-line"></div>
+                <div class="col col-right">
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 卡片 7：社交网络 ===== -->
+        <div class="card card-7">
+            <div class="card-title">🌐 社交网络</div>
             <div class="card-body">
                 <div class="col col-left">
                     <div class="link-item"><a href="https://news.ycombinator.com" target="_blank">Hacker News</a></div>
@@ -301,55 +304,33 @@
                 </div>
                 <div class="divider-line"></div>
                 <div class="col col-right">
-                    <div class="link-item"><a href="https://www.wired.com" target="_blank">Wired</a></div>
-                    <div class="link-item"><a href="https://www.engadget.com" target="_blank">Engadget</a></div>
-                    <div class="link-item"><a href="https://www.arstechnica.com" target="_blank">Ars Technica</a></div>
-                    <div class="link-item"><a href="https://www.bbc.com/news" target="_blank">BBC News</a></div>
-                    <div class="link-item"><a href="https://www.reuters.com" target="_blank">Reuters</a></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== 卡片 7：社交网络 ===== -->
-        <div class="card">
-            <div class="card-title">🌐 社交网络</div>
-            <div class="card-body">
-                <div class="col col-left">
-                    <div class="link-item"><a href="https://twitter.com" target="_blank">Twitter / X</a></div>
-                    <div class="link-item"><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></div>
-                    <div class="link-item"><a href="https://www.reddit.com" target="_blank">Reddit</a></div>
-                    <div class="link-item"><a href="https://t.me" target="_blank">Telegram</a></div>
-                    <div class="link-item"><a href="https://discord.com" target="_blank">Discord</a></div>
-                </div>
-                <div class="divider-line"></div>
-                <div class="col col-right">
-                    <div class="link-item"><a href="https://www.instagram.com" target="_blank">Instagram</a></div>
-                    <div class="link-item"><a href="https://www.facebook.com" target="_blank">Facebook</a></div>
-                    <div class="link-item"><a href="https://www.youtube.com" target="_blank">YouTube</a></div>
-                    <div class="link-item"><a href="https://www.tiktok.com" target="_blank">TikTok</a></div>
-                    <div class="link-item"><a href="https://www.pinterest.com" target="_blank">Pinterest</a></div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
                 </div>
             </div>
         </div>
 
         <!-- ===== 卡片 8：实用工具 ===== -->
-        <div class="card">
+        <div class="card card-8">
             <div class="card-title">⚙️ 实用工具</div>
             <div class="card-body">
                 <div class="col col-left">
                     <div class="link-item"><a href="https://www.google.com" target="_blank">Google</a></div>
-                    <div class="link-item"><a href="https://translate.google.com" target="_blank">Google 翻译</a></div>
+                    <div class="link-item"><a href="https://www.wolframalpha.com" target="_blank">WolframAlpha</a></div>
+                    <div class="link-item"><a href="https://weather.com" target="_blank">天气</a></div>
                     <div class="link-item"><a href="https://www.deepl.com" target="_blank">DeepL 翻译</a></div>
-                    <div class="link-item"><a href="https://www.timeanddate.com" target="_blank">世界时钟</a></div>
-                    <div class="link-item"><a href="https://www.calculator.net" target="_blank">计算器</a></div>
+                    <div class="link-item"><a href="https://www.xe.com" target="_blank">汇率换算</a></div>
                 </div>
                 <div class="divider-line"></div>
                 <div class="col col-right">
-                    <div class="link-item"><a href="https://www.wolframalpha.com" target="_blank">WolframAlpha</a></div>
-                    <div class="link-item"><a href="https://www.weather.com" target="_blank">天气</a></div>
-                    <div class="link-item"><a href="https://www.currencyconverter.com" target="_blank">汇率换算</a></div>
-                    <div class="link-item"><a href="https://www.unitconverters.net" target="_blank">单位换算</a></div>
-                    <div class="link-item"><a href="https://www.pdf24.org" target="_blank">PDF 工具</a></div>
+                    <div class="link-item"><a href="https://www.convertworld.com/zh-hans/" target="_blank">单位换算</a></div>
+                    <div class="link-item"><a href="https://www.calculator.net" target="_blank">计算器</a></div>
+                    <div class="link-item"><a href="https://www.ilovepdf.com" target="_blank">PDF 工具</a></div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
+                    <div class="link-item" style="visibility:hidden;">占位</div>
                 </div>
             </div>
         </div>
